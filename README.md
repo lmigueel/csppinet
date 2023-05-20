@@ -36,6 +36,8 @@ pip install csppinet
 
 csppinet construct a context-specific biological network based on omics data. From omics data, such as temporal transcriptome data, csppinet generates a context-specific network for each biological condition. It provides both an easy-to-use object-oriented Python API and a command-line interface (CLI) for context-specific network construction and post-analysis. 
 
+In order to fully leverage the capabilities of our package and obtain comprehensive insights, it is crucial to have a diverse and substantial number of biological conditions available for analysis, because the main function to determine a protein activity is based on [three-sigma method](https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/pmic.201200277).
+
 # Workflow
 
 csppinet contains a flowchart designed to provide a structured context-specific (cs) network based on omics data, as well metrics and comparative reports.
