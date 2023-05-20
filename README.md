@@ -63,9 +63,10 @@ example:  python3 csppinet.py --network_file network.csv --expression_file gene_
 ```
 In your current working folder, csppinet generates the following outputs:
 
-        1. A csv file containing the context-specific network for each biological condition;
-        2. A csv file containing the network metrics for the genes of each context-specific network;
-        3. A txt file containing the network metrics report file for each cs network. 
+        1. A csv file containing the context-specific network for each biological condition ("csppinet_csnetwork" prefix);
+        2. A csv file containing the network metrics for the genes of each context-specific network ("csppinet_GenesMetrics" prefix);
+        3. A txt file containing the network metrics report file for each cs network ("csppinet_Reports" prefix).
+        4. A csv file for the metrics Betweenness Centrality (BC), Closeness Centrality (CC) and Degree for all biological conditions in expression file.
  
 # Python library usage
 
