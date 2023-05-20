@@ -77,7 +77,7 @@ To use as a Python library
 
 import csppinet
 
-# csppinet arguments
+# csppinet arguments. Input files should be in .csv extension 
 network = '/opt/data/network.csv'
 exp = '/opt/data/expression_file.csv'
 threads = 10
@@ -86,7 +86,7 @@ threads = 10
 csppinet.construction(network,exp,threads)
 
 #network metrics
-csppinet.network_metrics()
+csppinet.network_metrics(exp)
 
 ```
 
