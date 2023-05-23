@@ -10,7 +10,7 @@ csppinet: A Python package for context-specific biological network construction 
 ██           ██ ██      ██      ██ ██  ██ ██ ██         ██    
  ██████ ███████ ██      ██      ██ ██   ████ ███████    ██ 
  ```
-        version 1.0
+        version 1.2
 
 
 - [Installation](#installing)
@@ -101,10 +101,10 @@ csppinet.network_metrics(exp)
 
 # Examples
 
-In these examples we will use as input the network of **Saccharomyces cerevisiae** from STRINGdb with "combined_score" > 900 together with gene expression data from the article by de Carvalho, et al. 2021 (https://doi.org/10.1093/femsyr/foab030). You could find the script in the Article section (next one).
+In these examples we will use as input the network of **Saccharomyces cerevisiae** from STRINGdb with "combined_score" > 900 together with gene expression data from the article by de Carvalho, et al. 2021 (https://doi.org/10.1093/femsyr/foab030). You could find the script in the Article section (next one) or in the "**article_dataset** folder.
 
 ```shell
-csppinet --network_file STRING_yeast.csv --expression_file expression_deCarvalho2021.csv --threads 10 --method pre-threshold --value 5
+csppinet --network_file STRING_Yeast_interactions_900_full.csv --expression_file full_expression_data.csv --threads 10 --method percentile --value 25
 ```
 
 # Article
