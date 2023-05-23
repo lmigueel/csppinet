@@ -53,15 +53,17 @@ csppinet features include:
 csppinet can be executed from the command line using the csppinet command. It takes the network and the gene expression file, as well the number of threads (essential for large networks). 
 
 ```
-usage: csppinet [-h] --network_file network.csv --expression_file gene_expression.csv --threads THREADS
+usage: csppinet [-h] --network_file network.csv --expression_file gene_expression.csv --method METHOD --value VALUE --threads THREADS
 
 optional arguments:
   -h, --help            show this help message and exit
   --network_file        A csv file containing the network
   --expression_file     A csv file containing the expression of the genes per condition
+  --method              A method to determine protein expression. Choose between "3-sigma", "percentile" or "pre-threshold". 
+  --value               A threshold value for "pre-threshold" or "percentile" method.  In the 'pre-threshold' method, the threshold value represents an absolute threshold for gene expression. On the other hand, in the 'percentile' method, the threshold value corresponds to the percentile cutoff. For example, a value of 5 represents the 5th percentile, while a value of 25 represents the 25th percentile or the first quartile. 
   --threads     Number of threads for multiprocessing. Considere it for large networks
 
-example:  python3 csppinet.py --network_file network.csv --expression_file gene_expession.csv --threads 2
+example:  python3 csppinet.py --network_file network.csv --expression_file gene_expession.csv --method pre-threshold --value 2 --threads 2
 ```
 In your current working folder, csppinet generates the following outputs:
 
@@ -84,9 +86,11 @@ import csppinet
 network = '/opt/data/network.csv'
 exp = '/opt/data/expression_file.csv'
 threads = 10
+method = "percentile"
+value = 25 
 
 #construction
-csppinet.construction(network,exp,threads)
+csppinet.construction(network,exp,threads,method,value)
 
 #network metrics
 csppinet.network_metrics(exp)
@@ -95,10 +99,10 @@ csppinet.network_metrics(exp)
 
 # Examples
 
-In these examples we will use as input the network of **Saccharomyces cerevisiae** from STRINGdb with "combined_score" > 900 together with gene expression data from the article by de Carvalho, et al. 2021 (https://doi.org/10.1093/femsyr/foab030).
+In these examples we will use as input the network of **Saccharomyces cerevisiae** from STRINGdb with "combined_score" > 900 together with gene expression data from the article by de Carvalho, et al. 2021 (https://doi.org/10.1093/femsyr/foab030). You could find the script in the Article section (next one).
 
 ```shell
-csppinet --network_file STRING_yeast.csv --expression_file expression_deCarvalho2021.csv --threads 10
+csppinet --network_file STRING_yeast.csv --expression_file expression_deCarvalho2021.csv --threads 10 --method pre-threshold --value 5
 ```
 
 # Article
