@@ -25,7 +25,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='csppinet',
-    version='1.0',
+    version='1.2',
     packages=find_packages(),
     license='GNU General Public License v3.0',
     long_description=open('README.md').read(),

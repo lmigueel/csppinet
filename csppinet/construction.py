@@ -75,7 +75,7 @@ def construction(ppi_network, expression_data, threads, method, value):
         print("Step 2: Processing with method", method)
     else:
         # Stop and produce an error message
-        print("Invalid argument! Please enter either '3-sigma' or 'pre-threshold'.")
+        print("Invalid argument! Please enter either '3-sigma', 'percentile' or 'pre-threshold'.")
         sys.exit(1)
 
 
