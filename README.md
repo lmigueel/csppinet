@@ -1,4 +1,5 @@
 [![PyPI](https://img.shields.io/pypi/v/csppinet.svg?label=PyPI&color=green)](https://pypi.org/project/csppinet/)
+[![DOI](https://img.shields.io/badge/DOI-10.1101%2F2023.05.23.541999-red)](https://doi.org/10.1101/2023.05.23.541999)
 
 # csppinet
 csppinet: A Python package for context-specific biological network construction and analysis based on omics data
